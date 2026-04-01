@@ -482,7 +482,8 @@ window.handleSubmit=function(e){e.preventDefault();clearAllErrors();var nome=doc
 </script>
 <script>
 (function(){
-  if(document.cookie.indexOf('apromed_lead=1')!==-1){var o=document.getElementById('loginOverlay');if(o)o.remove();return}
+  var isTest=new URLSearchParams(window.location.search).get('test')==='1';
+  if(!isTest&&document.cookie.indexOf('apromed_lead=1')!==-1){var o=document.getElementById('loginOverlay');if(o)o.remove();return}
   setTimeout(function(){var o=document.getElementById('loginOverlay');if(o&&o.style.display==='none'){o.style.display='flex';document.body.style.overflow='hidden'}},5000);
 })();
 </script>
